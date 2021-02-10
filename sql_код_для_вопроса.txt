@@ -1,0 +1,5 @@
+SELECT categoria.name, prod_category.id_prod as prod,
+GROUP_CONCAT(prod.name) FROM categoria 
+INNER JOIN product_categoria ON categoria_id = prod_categoria.id_categoria 
+LEFT JOIN prod ON prod_categoria.id_prod = prod_id 
+GROUP BY categoria.name
